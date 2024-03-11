@@ -47,11 +47,31 @@ class _CakeInfoPageState extends State<CakeInfoPage> {
     final stars = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(Icons.star, color: Colors.green[500]),
-        Icon(Icons.star, color: Colors.green[500]),
-        Icon(Icons.star, color: Colors.green[500]),
-        const Icon(Icons.star, color: Colors.black),
-        const Icon(Icons.star, color: Colors.black),
+        Icon(
+          Icons.star,
+          color: Colors.green[500],
+          size: 16,
+        ),
+        Icon(
+          Icons.star,
+          color: Colors.green[500],
+          size: 16,
+        ),
+        Icon(
+          Icons.star,
+          color: Colors.green[500],
+          size: 16,
+        ),
+        const Icon(
+          Icons.star,
+          color: Colors.black,
+          size: 16,
+        ),
+        const Icon(
+          Icons.star,
+          color: Colors.black,
+          size: 16,
+        ),
       ],
     );
     final ratings = Container(
@@ -92,7 +112,10 @@ class _CakeInfoPageState extends State<CakeInfoPage> {
           children: [
             Column(
               children: [
-                Icon(Icons.kitchen, color: Colors.green[500]),
+                Icon(
+                  Icons.kitchen,
+                  color: Colors.green[500],
+                ),
                 const Text('PREP:'),
                 const Text('25 min'),
               ],
@@ -127,19 +150,19 @@ class _CakeInfoPageState extends State<CakeInfoPage> {
       ),
     );
     String imageLink =
-        'https://cdn.pixabay.com/photo/2016/06/20/23/50/mixed-berries-1470228_1280.jpg';
+        'https://img2.baidu.com/it/u=1715340838,149884203&fm=253&fmt=auto&app=138&f=JPEG?w=300&h=300';
     return Scaffold(
       appBar: AppBar(
         title: const Text('蛋糕介绍'),
       ),
       body: Container(
         margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-        height: 180,
+        height: 170,
         child: Card(
           child: Row(
             children: [
               SizedBox(
-                width: 220,
+                width: 200,
                 child: leftColumn,
               ),
               Expanded(
