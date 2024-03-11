@@ -46,7 +46,7 @@ class _BottomNaviBarPageState extends State<BottomNaviBarPage> {
         items: items,
         currentIndex: currentIndex,
         onTap: onTap,
-        fixedColor: Color.fromRGBO(111, 67, 193, 1),
+        fixedColor: const Color.fromRGBO(111, 67, 193, 1),
         unselectedFontSize: 10,
         selectedFontSize: 10,
       ),
