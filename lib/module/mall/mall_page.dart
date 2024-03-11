@@ -42,7 +42,7 @@ class ItemWidget extends StatelessWidget {
   final int index;
 
   final String imageLink =
-      'https://img0.baidu.com/it/u=2412946534,418122829&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500';
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fg-search1.alicdn.com%2Fimg%2Fbao%2Fuploaded%2Fi1%2F2209166388654%2FO1CN01AMi8XC2DnaBFiw7Z0_%21%212209166388654.jpg_300x300.jpg&refer=http%3A%2F%2Fg-search1.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1712712816&t=2f0c773e7be444c6552af5a34dd1799f';
 
   @override
   Widget build(BuildContext context) {
