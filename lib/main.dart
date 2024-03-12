@@ -1,9 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app_color.dart';
 import 'package:flutter_app/bottom_navi_bar_page.dart';
+import 'package:flutter_app/module/learn/provider_page.dart';
+import 'package:flutter_app/module/learn/provider_shopper/models/cart_model.dart';
+import 'package:flutter_app/module/learn/provider_shopper/models/catalog_model.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // ChangeNotifierProvider(
+    //   create: (context) => Counter(),
+    //   child: const MyApp(),
+    // ),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => Counter()),
+        // In this sample app, CatalogModel never changes, so a simple Provider
+        // is sufficient.
+        Provider(create: (context) => CatalogModel()),
+        // CartModel is implemented as a ChangeNotifier, which calls for the use
+        // of ChangeNotifierProvider. Moreover, CartModel depends
+        // on CatalogModel, so a ProxyProvider is needed.
+        ChangeNotifierProxyProvider<CatalogModel, CartModel>(
+          create: (context) => CartModel(),
+          update: (context, catalog, cart) {
+            if (cart == null) throw ArgumentError.notNull('cart');
+            cart.catalog = catalog;
+            return cart;
+          },
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

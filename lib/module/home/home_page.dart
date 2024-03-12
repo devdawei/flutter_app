@@ -8,6 +8,8 @@ import 'package:flutter_app/module/learn/grid_view_page.dart';
 import 'package:flutter_app/module/learn/horizontal_list_view_page.dart';
 import 'package:flutter_app/module/learn/layout_build_page.dart';
 import 'package:flutter_app/module/learn/long_list_view_page.dart';
+import 'package:flutter_app/module/learn/provider_page.dart';
+import 'package:flutter_app/module/learn/provider_shopper/pages/catalog_page.dart';
 import 'package:flutter_app/module/learn/space_item_page.dart';
 import 'package:flutter_app/module/learn/vertical_list_view_page.dart';
 
@@ -28,6 +30,8 @@ enum PageType {
   longList,
   floatingAppBar,
   cakeInfo,
+  providerCounter,
+  providerShopper,
 }
 
 class _HomePageState extends State<HomePage>
@@ -45,6 +49,8 @@ class _HomePageState extends State<HomePage>
     ItemModel(PageType.longList, '处理长列表'),
     ItemModel(PageType.floatingAppBar, '浮动的顶栏'),
     ItemModel(PageType.cakeInfo, '蛋糕介绍'),
+    ItemModel(PageType.providerCounter, '状态管理-Provider-Counter'),
+    ItemModel(PageType.providerShopper, '状态管理-Provider-Shopper'),
   ];
 
   @override
@@ -119,6 +125,12 @@ class ItemWidget extends StatelessWidget {
         break;
       case PageType.cakeInfo:
         AppNavigator.push(context, const CakeInfoPage());
+        break;
+      case PageType.providerCounter:
+        AppNavigator.push(context, const ProviderPage());
+        break;
+      case PageType.providerShopper:
+        AppNavigator.push(context, const CatalogPage());
         break;
     }
   }
